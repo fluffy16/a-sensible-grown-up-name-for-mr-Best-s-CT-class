@@ -7,12 +7,14 @@ program goals:
     b. Return a value at a specific index
 
 """
-
+myList = []
 def mainProgram():
-    myList = []
+    while True:
     print("Hello, there! let's work with lists!")
     print("Choose from the following options. Type a number below!")
-    choice = input("1. Add to a list , 2. Return the value at an index position!     ")
+    choice = input("""1. Add to a list or
+                   2. Return the value at an index position!
+                   3.Exit program"   """)
     if choice == "1":
         addToList ()
     elif choice == "2":
@@ -24,6 +26,9 @@ def addToList():
     myList.append(int(newItem))
     
 def indexValues():
+    print("Ohhhh! I heard you need a particular piece of data!")
+    indexPos =  input ("What index position are you curious about?    ")
+    print(myList[int(indexpos)])
 
 if __name__ == "__main__":
     mainProgram()
