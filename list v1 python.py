@@ -16,28 +16,40 @@ def mainProgram():
             choice = input("""1. Add to a list or
 2. add a bunch of numbers
 3. Return the value at an index 
-4. random search
-5. linear search
-6. print contents of list
-7. sort list
-8. quit program""")
-            #add a way to catch bad user responses
-            if choice == "1":
-                addToList ()
-            elif choice == "2":
-                addABunch()
-            elif choice == "3":
-                indexValues()
-            elif choice == "4":
-                randomSearch()
-            elif choice == "5":
-                linearSearch()
-            elif choice == "6":
-                print(myList)
-            elif choice == "7":
-                sort(myList)
+4. sort list
+5. random search
+6. linear search
+7. recursive binary search
+8. iterative binary search
+9. print list
+10. quit    """)
+        if choice == "1":
+            addToList ()
+        elif choice == "2":
+            addABunch()
+        elif choice == "3":
+            indexValues()
+        elif choice == "4":
+            sortList(myList)
+        elif choice == "5":
+            randomsearch()
+        elif choice == "6":
+            linearSearch
+        elif choice == "7":
+            binSearch = input("what number are you looking for? ")
+            recursiveBinarySearch(uniqueList, 0, len(uniqueList)-1, int(binSearch))
+        elif choice == "8":
+            binSearch = input("what number are you looking for? ")
+            result = iterativeBinarySearch(uniqueList, int(binSearch))
+            if result !=-1:
+                print"your number is at index position {}".format(result))
             else:
-                break
+                print("your number is not in that list, bud!")
+            
+        elif choice == "9":
+            printLists()
+        else:
+            break
         except:
             print("you made an oopsie!")
     #TO ADD: 1. A way to loop the action, 2. A way to quit, 3. Think of repitition.
@@ -81,6 +93,15 @@ def linearSearch():
     for x in range(len(myList)):
         if myList[x] == int(searchItem):
             print("Your item is at index position {}".format(x))
+
+def recursiveBinarySearch(uniqueList, low, high, x):
+    if high >= low:
+        mid = (high + low) // 2
+
+
+    
+    else:
+        print("your number isn't here!")
 
 def printLists():
     if len(uniqueList) == 0:
