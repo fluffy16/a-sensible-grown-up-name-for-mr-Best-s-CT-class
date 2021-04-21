@@ -50,9 +50,7 @@ def mainProgram():
             printLists()
         else:
             break
-        except:
-            print("you made an oopsie!")
-    #TO ADD: 1. A way to loop the action, 2. A way to quit, 3. Think of repitition.
+            
 def addToList():
     print("Adding to a list! Great choice!")
     newItem = input("type an integer here!     ")
@@ -98,10 +96,34 @@ def recursiveBinarySearch(uniqueList, low, high, x):
     if high >= low:
         mid = (high + low) // 2
 
+        if uniqueList[mid] == x:
+            print("your number is at index position {}".format(mid))
+            return mid
 
-    
+        elif uniqueList[mid] > x:
+            return recursiveBinarySearch(uniqueList, low, mid, -1, x)
+
+        else:
+            return recursiveBinrySearch(uniqueList, mid + 1, high, x)
     else:
         print("your number isn't here!")
+
+def iterativeBinarySearch(uniqueList, x):
+    low = 0
+    high = len(uniqueList)-1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low) // 2
+
+        if uniqueList[mid] < x:
+            low = mid + 1
+
+        elif uniqueList[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+    return -1
 
 def printLists():
     if len(uniqueList) == 0:
